@@ -194,14 +194,14 @@ hand-verified attribution of the categories.
 (x86-64 Linux, release build), against **sqlite 3.45.1** as the reference for
 the hand-checks.
 
-Corpus: `/home/morten/sqllogictest/test` (the gregrahn/sqllogictest mirror) —
+Corpus: `/path/to/sqllogictest/test` (the gregrahn/sqllogictest mirror) —
 **622 `.test` files, 1.1 GB, 44.9 M lines, 7,420,713 `statement`/`query`
 directives**. Runner: `crates/mpedb-testkit/src/bin/sqlite_corpus.rs`, driven
 from a file list in 78 chunks of 8 files, each chunk under
 `ulimit -v 3000000` + `timeout 580`. Reproduce with:
 
 ```
-find /home/morten/sqllogictest/test -name '*.test' | sort > flist
+find /path/to/sqllogictest/test -name '*.test' | sort > flist
 # then, per chunk of 8:
 ( ulimit -v 3000000; timeout 580 target/release/sqlite_corpus --samples-all <files> )
 ```

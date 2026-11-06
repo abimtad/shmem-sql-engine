@@ -4,7 +4,7 @@
 into a self-tuning optimization subsystem. Grounded in what exists — exact transactional `row_count`,
 live `CREATE INDEX` (#48), content-hashed plans, the MPEE cost broker (#12/#73). Ties #74, #76,
 #80, [DESIGN-HTTP-RANGE.md](DESIGN-HTTP-RANGE.md), [DESIGN-DISTRIBUTED.md](DESIGN-DISTRIBUTED.md) §8.
-Hard constraint (Morten): stats maintenance + auto-indexing are cheap / background / opt-in — NEVER
+Hard constraint: stats maintenance + auto-indexing are cheap / background / opt-in — NEVER
 on the write hot path.**
 
 **Update 2026-07-20 (#114):** the *consumer* of all this now exists. MPEE is a
@@ -41,7 +41,7 @@ and auto-create is a ratchet. §6's recommend-only first stage is unaffected and
 ## 0. Beyond `row_count`
 
 MPEE prices plans today with exact `row_count` (transactionally exact, a real advantage). Richer, and
-what Morten's asking for: a **persisted, continuously-updated cost catalog**, **access-method-aware**
+what is being asked for: a **persisted, continuously-updated cost catalog**, **access-method-aware**
 cost functions, **per-consumer** specialization, and an **auto-indexing advisor** balancing read vs
 write — all read by the planner at prepare time, none of it touching the mutator.
 

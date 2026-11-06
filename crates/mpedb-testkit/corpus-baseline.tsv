@@ -1,6 +1,6 @@
 # mpedb sqllogictest corpus baseline.
 # Regenerate deliberately with --write-baseline; never by hand.
-# root /home/morten/sqllogictest/test
+# root /path/to/sqllogictest/test
 # key	total	pass	unsupported	wrong	errmis	skipped	fatal
 evidence/in1.test	216	132	0	0	0	84	0
 evidence/in2.test	54	53	0	0	0	1	0

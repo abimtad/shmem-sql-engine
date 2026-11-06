@@ -688,7 +688,7 @@ mod tests {
         let mut pkt = Vec::new();
         let body = {
             let mut b = PROTOCOL_V3.to_be_bytes().to_vec();
-            b.extend_from_slice(b"user\0morten\0database\0app\0\0");
+            b.extend_from_slice(b"user\0app\0database\0app\0\0");
             b
         };
         pkt.extend_from_slice(&((body.len() + 4) as i32).to_be_bytes());
@@ -697,7 +697,7 @@ mod tests {
         assert_eq!(
             got,
             Startup::Params(vec![
-                ("user".into(), "morten".into()),
+                ("user".into(), "app".into()),
                 ("database".into(), "app".into()),
             ])
         );

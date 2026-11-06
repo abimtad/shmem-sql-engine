@@ -142,7 +142,7 @@ for the explicit limitations of the initial native implementation.
 ```sh
 cd crates/mpedb-pg/workbench/satest
 python -m pytest -q --timeout=20 --timeout-method=thread \
-  --dburi 'postgresql+psycopg2://morten@/app?host=/tmp/mpedb-pg-sock'
+  --dburi 'postgresql+psycopg2://app@/app?host=/tmp/mpedb-pg-sock'
 ```
 
 The extension provisioning hook is neutered in `conftest.py` (scaffolding, not test

@@ -5,7 +5,7 @@ The last domain of the generic-solver program (stage M4,
 road-network sequencing, with the two engines this project bridges — **mpedb's
 kernel grown a `(subset, last)` exact mode** (Held-Karp,
 `mpedb_sql::sequence`), and **brooom**, the original MPEE vehicle-routing
-solver (github.com/punnerud/mpee), run CPU-only as a subprocess with JSON I/O.
+solver, run CPU-only as a subprocess with JSON I/O.
 
 **The vecbench frame, applied to sequencing: exact is the ground truth, the
 heuristic is scored by gap and time.** Below the exact cap (N ≤ 18 nodes) the
@@ -279,7 +279,7 @@ and tears down its own throwaway cluster).
 ## Reproducing
 
 ```sh
-# brooom, CPU-only, from github.com/punnerud/mpee:
+# brooom, CPU-only, from the MPEE repository:
 cargo build --release -p brooom --no-default-features --features cli,osrm,google
 
 cargo run --release -p mpedb-routebench -- \

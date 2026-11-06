@@ -5,7 +5,7 @@ measurement half is a new census mode on the #117 harness
 (`sqlite_corpus --index-census`), and it is the thing that decides whether the rest is
 worth building.
 
-Morten's premise: *"The usual thing is having to design lots of indexes, but why not take in
+The premise: *"The usual thing is having to design lots of indexes, but why not take in
 the model/SQL — e.g. the model used in Django — then run a test of the SQL statements and build
 indexes based on that. Not certain the whole table should have an index either, but parts of
 the data across it. … New versions should not rebuild indexes."* And the objection to the
@@ -249,7 +249,7 @@ direction. So **three families** are counted:
 `sqlite_corpus --index-census=<tsv>` over 14 real sqllogictest files —
 `index/{between,commute,delete,in,orderby,orderby_nosort,random,view}/1000/slt_good_0.test`,
 `random/{aggregates,expr,groupby,select}/slt_good_0.test`, `evidence/slt_lang_update.test`,
-`select1.test` (corpus root `/home/morten/sqllogictest/test`). **115,612 records, 103,564
+`select1.test` (corpus root `/path/to/sqllogictest/test`). **115,612 records, 103,564
 passing, 0 wrong**, 44 s wall. **Run twice; every count below reproduced exactly.** Nothing in
 the engine, the commit path or the plan format changed.
 
@@ -623,7 +623,7 @@ So a partial index on a parameterized column is unreachable by this probe. Two h
 
 ### 6.1 (A) — ahead of time, from the workload
 
-Morten's primary. Cost at runtime: **zero**. It needs the workload up front, and a test suite
+The primary mode. Cost at runtime: **zero**. It needs the workload up front, and a test suite
 is the workload: running an app's suite against mpedb populates the registry (or, better, is
 captured as a statement stream and fed to `recommend_indexes(WorkloadSource::Statements(..))`,
 which is not subject to the 4,096 cap of §1.1).
@@ -638,7 +638,7 @@ number is assumed (§8).
 
 ### 6.2 (B) — adaptive, and where it attaches
 
-Morten's objection is exact: *"then there is delay based on use"* — the first N queries
+The objection is exact: *"then there is delay based on use"* — the first N queries
 pay, and the build itself adds latency. The composition answers both halves separately:
 
 - **The first-N-queries cost is removed by (A)**, for everything the suite covered. (B) never
@@ -790,7 +790,7 @@ gated on P3 (DROP INDEX) per §7.
 
 ## 9. Responses that name the method — writing for the reader who is a model
 
-Morten: *"Because most (all?) now use LLMs we can build in feedback that points to
+The brief: *"Because most (all?) now use LLMs we can build in feedback that points to
 … smarter index building than classic indexes."* Then, correcting the first instinct:
 *"E.g. just point to internal APIs and functions — documentation LLMs usually find on their own?"*
 

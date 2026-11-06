@@ -33,7 +33,7 @@ classifiers = [
 ]
 
 [project.urls]
-Repository = "https://github.com/punnerud/mpedb"
+Repository = "https://github.com/abimtad/shmem-sql-engine"
 
 [tool.maturin]
 python-source = "python"

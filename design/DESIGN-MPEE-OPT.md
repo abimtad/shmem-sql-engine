@@ -2,7 +2,7 @@
 
 Status: post-implementation, post-measurement. Companion to DESIGN.md §5.3 (intent
 ring as-built) and §7.3 (footprints). Hypothesis under test: concepts from MPEE
-(offline route-optimization engine, github.com/punnerud/mpee) transfer to mpedb's
+(offline route-optimization engine) transfer to mpedb's
 query/batch execution. Verdict up front: **one MPEE idea transferred and shipped
 (broker "buy once"), the headline idea (locality routing) was implemented, measured,
 and falsified for this engine's COW model, and two ideas are staged with concrete

@@ -64,7 +64,7 @@ const COUNTRIES: [&str; 8] = ["NO", "SE", "DK", "FI", "DE", "FR", "GB", "US"];
 const CATEGORIES: [&str; 5] = ["keyboard", "display", "audio", "storage", "cable"];
 const STATUSES: [&str; 4] = ["placed", "shipped", "delivered", "returned"];
 const FIRST: [&str; 12] = [
-    "Morten", "Ingrid", "Lars", "Astrid", "Jonas", "Kari", "Erik", "Sofie", "Nils", "Maja",
+    "Henrik", "Ingrid", "Lars", "Astrid", "Jonas", "Kari", "Erik", "Sofie", "Nils", "Maja",
     "Anders", "Live",
 ];
 const LAST: [&str; 8] = [

@@ -2,9 +2,9 @@
 
 [![PyPI](https://img.shields.io/pypi/v/mpedb.svg)](https://pypi.org/project/mpedb/)
 [![Python](https://img.shields.io/pypi/pyversions/mpedb.svg)](https://pypi.org/project/mpedb/)
-[![Linux](https://github.com/punnerud/mpedb/actions/workflows/linux.yml/badge.svg?branch=main)](https://github.com/punnerud/mpedb/actions/workflows/linux.yml)
-[![macOS](https://github.com/punnerud/mpedb/actions/workflows/macos.yml/badge.svg?branch=main)](https://github.com/punnerud/mpedb/actions/workflows/macos.yml)
-[![Windows](https://github.com/punnerud/mpedb/actions/workflows/windows.yml/badge.svg?branch=main)](https://github.com/punnerud/mpedb/actions/workflows/windows.yml)
+[![Linux](https://github.com/abimtad/shmem-sql-engine/actions/workflows/linux.yml/badge.svg?branch=main)](https://github.com/abimtad/shmem-sql-engine/actions/workflows/linux.yml)
+[![macOS](https://github.com/abimtad/shmem-sql-engine/actions/workflows/macos.yml/badge.svg?branch=main)](https://github.com/abimtad/shmem-sql-engine/actions/workflows/macos.yml)
+[![Windows](https://github.com/abimtad/shmem-sql-engine/actions/workflows/windows.yml/badge.svg?branch=main)](https://github.com/abimtad/shmem-sql-engine/actions/workflows/windows.yml)
 
 A multi-process embedded database engine with PostgreSQL-grade concurrency
 (MVCC snapshots, lock-free readers) behind the `sqlite3` API you already use.
@@ -80,7 +80,7 @@ adapters/converters (`detect_types`), `create_function`, `blobopen`,
 `isolation_level`/`autocommit` control. On the native engine, reads on a
 connection do not yet see its own uncommitted writes (they do on the `.db`
 overlay backend). Details and progress:
-[github.com/punnerud/mpedb](https://github.com/punnerud/mpedb).
+[github.com/abimtad/shmem-sql-engine](https://github.com/abimtad/shmem-sql-engine).
 
 ---
 
@@ -185,7 +185,7 @@ non-convertible value) raises the ordinary `TypeError`/`OverflowError`.
 
 ## Building from source
 
-See [github.com/punnerud/mpedb](https://github.com/punnerud/mpedb):
+See [github.com/abimtad/shmem-sql-engine](https://github.com/abimtad/shmem-sql-engine):
 `maturin build --release` in `crates/mpedb-py/` produces the wheel; the test
 suite is `crates/mpedb-py/pytest/test_mpedb.py` (plain Python, no pytest —
 run it twice against the same directory to also exercise persistence across

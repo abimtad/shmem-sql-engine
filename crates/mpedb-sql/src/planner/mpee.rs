@@ -73,7 +73,7 @@
 //! actually depends on, re-solve. When a proposal's own cost is fully bought,
 //! its estimate is exact while every rejected candidate's estimate was a lower
 //! bound — so it is optimal over everything the search explored, and the rounds
-//! stop. That is Morten's *"valg av N kan gjøres med MPEE-styring"*: the solver
+//! stop. That is the idea *"valg av N kan gjøres med MPEE-styring"*: the solver
 //! picks which N to examine next instead of enumerating them all.
 
 use super::*;
@@ -517,7 +517,7 @@ impl<'a> Problem<'a> {
         Some(order)
     }
 
-    /// **Extremal analysis** (Morten's city analogy: sample the compass
+    /// **Extremal analysis** (the city analogy: sample the compass
     /// extremes first and the 4×4 among them already exposes the main roads
     /// and junctions). The query-graph analogues, all read straight off the
     /// problem and all deterministic:

@@ -1070,7 +1070,7 @@ mod tests {
 /// **Does quorum flushing reach the F-batch ceiling, and does the timeout stay
 /// unfired?**
 ///
-/// The flush rule Morten proposed, borrowed from etcd: do not wait on the
+/// The flush rule, borrowed from etcd: do not wait on the
 /// clock, wait until a *majority* of the editors with outstanding work have
 /// delivered. The slowest do not gate the fast ones. The time limit is an upper
 /// bound that should normally not fire — and *how often it fires* is the number

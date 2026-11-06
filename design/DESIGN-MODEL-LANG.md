@@ -16,7 +16,7 @@ the advisor this feeds), [DESIGN-MPEE-GENERAL.md](DESIGN-MPEE-GENERAL.md)
 
 ## 0. The idea
 
-Morten's framing, which this document makes mechanical: **most people choose a
+The framing, which this document makes mechanical: **most people choose a
 database after planning their application — but what they actually produced in
 that planning is a MODEL, and the database switch is really a model switch.**
 "This will be ordinary sqlite3-style usage" is a model. A Django `models.py`

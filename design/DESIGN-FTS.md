@@ -88,7 +88,7 @@ PkPoint/IndexRange). Evaluation is posting-list set algebra over the inverted-in
 - Each term → its posting list (a cursor over the index tree; length is **known exactly** from the
   index — mpedb has transactional row/entry counts). `AND` = intersect, `OR` = merge, `NOT` =
   difference, phrase = positional intersection.
-- **This is exactly the MPEE streaming-N×N story** (design/DESIGN-MPEE-OPT.md, the punnerud/mpee
+- **This is exactly the MPEE streaming-N×N story** (design/DESIGN-MPEE-OPT.md, the MPEE
   "one exit collapses the region" heuristic): evaluate the **rarest term first** (smallest posting
   list), and let it drive — every other term is probed only against that candidate set, never
   materialized in full. The classic FTS "sort by document frequency, intersect ascending" is the

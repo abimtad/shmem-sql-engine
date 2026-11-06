@@ -450,8 +450,8 @@ expression depth, trigger depth.
 
 ## 4. MPEE: a route optimizer pointed at query plans
 
-MPEE is an offline vehicle-routing engine from another repository by the same
-author ([github.com/punnerud/mpee](https://github.com/punnerud/mpee)). Its
+MPEE is an offline vehicle-routing engine from a separate
+repository. Its
 concepts were carried into query planning. This is the clearest cross-domain
 transfer in the project, and — importantly — it includes a **falsification**: the
 headline idea was implemented, measured, and killed before the right target was

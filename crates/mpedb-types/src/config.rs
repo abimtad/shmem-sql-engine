@@ -1428,7 +1428,7 @@ mod toml_escape_tests {
     /// anything that was never broken.
     #[test]
     fn a_unix_path_is_unchanged() {
-        let p = "/home/morten/db/app.mpedb";
+        let p = "/home/user/db/app.mpedb";
         assert_eq!(toml_escape(p), p);
     }
 

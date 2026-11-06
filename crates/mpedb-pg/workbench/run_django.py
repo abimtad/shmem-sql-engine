@@ -103,7 +103,7 @@ def main():
             databases[alias] = {
                 "ENGINE": metadata["backend"],
                 "NAME": name,
-                "USER": "morten",
+                "USER": "app",
                 "HOST": sock,
                 "PORT": "5432",
                 "OPTIONS": {"connect_timeout": 10},

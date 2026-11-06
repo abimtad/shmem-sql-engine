@@ -3,8 +3,8 @@
 **Status: design + staged plan, 2026-07-22.** Grounded in two measurements from
 the same day: the OLAP head-to-head ([../benchmarks/olap.md](../../benchmarks/olap.md))
 that showed the join-order solver working correctly *inside* a plan space whose
-pricing cannot see a star schema, and the original MPEE engine
-(github.com/punnerud/mpee), whose cost model was always a pluggable set of
+pricing cannot see a star schema, and the original MPEE engine,
+whose cost model was always a pluggable set of
 dimensions rather than a formula. This document says what generalizes, what does
 not, and in which order the pieces land.
 
@@ -303,7 +303,7 @@ hard bound), *wall time* (the #74 work meter is its deterministic proxy),
 entry is one more accumulator with a monotonicity declaration — that is the
 whole registration contract, and §3's rules are its validity conditions.
 
-### 9.2 The honest benchmark against github.com/punnerud/mpee
+### 9.2 The honest benchmark against the original MPEE engine
 
 The two engines share contracts, not objectives: brooom minimizes an
 **additive pairwise** path cost with a metaheuristic (HGS/local search, 50k

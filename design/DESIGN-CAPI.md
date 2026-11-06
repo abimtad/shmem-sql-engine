@@ -15,7 +15,7 @@ A new crate `mpedb-capi` (cdylib) exports the sqlite3 C symbols (`sqlite3_open_v
 
 ## 1. What it unlocks — the testing answer
 
-The point Morten raised: matching the C-API lets us run **far more** tests than the portable
+The key point: matching the C-API lets us run **far more** tests than the portable
 sqllogictest corpus, by borrowing the ecosystem's suites:
 - **Python's built-in `sqlite3` module** and its `unittest` suite (CPython links libsqlite3).
 - **Django** — its ORM and its own **test suite**, with mpedb as the DB backend (this is what makes

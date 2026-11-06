@@ -45,11 +45,10 @@
     <code>Atomics</code> give real futex and CAS primitives; what is missing is
     owner-death detection, and inventing a third lock construction for a demo is
     not something we would do quietly
-    (<a href="https://github.com/punnerud/mpedb/blob/main/design/DESIGN-WASM-MULTIWRITER.md">sketch</a>).</p>
+    (<a href="https://github.com/abimtad/shmem-sql-engine/blob/main/design/DESIGN-WASM-MULTIWRITER.md">sketch</a>).</p>
     <p>Absent for the same reason: durability classes, crash recovery, real
     files, and the C-API shim — those numbers live in
-    <a href="https://github.com/punnerud/mpedb/blob/main/minisqlite-vs-mpedb.md">the
-    engine comparison</a>. Everything you <em>can</em> click here is genuine: the
+    the engine comparison. Everything you <em>can</em> click here is genuine: the
     SQL semantics, the plans and their hashes, the footprints, the MPEE join
     reordering, and every refusal.</p>
     </div>
@@ -129,7 +128,7 @@
 
   <footer class="foot">
     <p>mpedb — an embedded, multi-process, shared-memory database in Rust.
-    <a href="https://github.com/punnerud/mpedb">Source on GitHub</a>.
+    <a href="https://github.com/abimtad/shmem-sql-engine">Source on GitHub</a>.
     This page is built from the same commit as the engine it runs; it ships no
     CDN assets and works offline.</p>
   </footer>

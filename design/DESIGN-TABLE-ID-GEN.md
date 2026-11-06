@@ -18,7 +18,7 @@ concurrency change, and rides the project's wire/commit-path adversarial-review 
 
 `MAX_TABLES = 64` comes from the footprint/CDC bitmap being a `u64` (one bit per dense table id), and
 a dropped table tombstones its id in place (no reuse) — so it caps **lifetime** creates. Widening the
-bitmap (`u64 → [u64; N]`) raises the ceiling but keeps a lifetime cap. The right fix, per Morten:
+bitmap (`u64 → [u64; N]`) raises the ceiling but keeps a lifetime cap. The right fix:
 **keep the live tables, archive the dead, grow dynamically** — make the cap = LIVE tables (small,
 fits a narrow bitmap) and let lifetime creates be **unbounded** by reclaiming dead id-slots.
 

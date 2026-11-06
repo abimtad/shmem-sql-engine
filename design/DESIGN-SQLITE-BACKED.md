@@ -9,7 +9,7 @@ written in the design's future tense; the load-bearing mechanisms are the
 reviewed ones, and building anything contradicting them re-opens a named
 finding. Task #69.
 
-The idea (Morten, 2026-07-17): work directly against a sqlite `.db` as the
+The idea (2026-07-17): work directly against a sqlite `.db` as the
 durable, canonical home — every sqlite tool can open it — while mpedb provides
 the hot path: `.mpedb` is a **delta overlay** playing the role a WAL plays for
 a database. All writes and all MVCC/multi-process reads go through the
@@ -185,7 +185,7 @@ quoted, not paraphrased optimistically [R#9]. The in-header db-size field
 (offset 28) is trusted only when its validity rule holds (counter at 24 ==
 version-valid-for at 92), else the file size is authoritative [R#20].
 
-**Settling (Morten's granularity trick), specified in the file-clock
+**Settling (the granularity trick), specified in the file-clock
 domain** [R#11]: while still holding SHARED, touch the scratch file in a
 loop until *its* mtime is strictly greater than the base's stamp candidate —
 this settles against the filesystem's own timestamp clock, immune to the

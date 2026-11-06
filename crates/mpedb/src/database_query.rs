@@ -583,7 +583,7 @@ impl Database {
 
     /// Compile `sql` to a content-hashed plan **without publishing it to the
     /// shared registry**: the caller keeps the returned [`DetachedPlan`] and
-    /// ships `(blob + hash + sql)` itself (Morten's detached-plan model). The
+    /// ships `(blob + hash + sql)` itself (the detached-plan model). The
     /// returned `hash` is byte-identical to what [`Database::prepare`] would
     /// produce for the same SQL and schema — the two paths differ only in
     /// whether the plan is stored in the database.

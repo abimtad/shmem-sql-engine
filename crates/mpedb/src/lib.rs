@@ -613,7 +613,7 @@ impl mpedb_core::btree::BlobSource for FileBlobSource {
 }
 
 /// A **detached (client-borne) plan**: the compiled plan the SDK/client
-/// carries itself instead of leaving in the shared registry (Morten's idea,
+/// carries itself instead of leaving in the shared registry (that is
 /// design/DESIGN.md §7.2 turned inside-out). Shipping `(blob + hash + sql)` between
 /// components lets any process execute the plan with *no registry write* — the
 /// database only has to VALIDATE integrity ([`Database::execute_detached`]),

@@ -73,7 +73,7 @@ def main():
                     if server.poll() is not None or time.monotonic() >= deadline:
                         raise RuntimeError(f"Server did not start; see {run_dir / 'server.log'}")
                     time.sleep(0.05)
-                url = "postgresql+psycopg2://morten@/app?" + urlencode({"host": sock_dir})
+                url = "postgresql+psycopg2://app@/app?" + urlencode({"host": sock_dir})
                 with (run_dir / "pytest.log").open("w") as log:
                     completed = subprocess.run(
                         [sys.executable, "-m", "pytest", "-q", "--dburi", url,

@@ -19,7 +19,7 @@ Lossless steps (rotate image, add annotation) have residual = ∅. Lossy steps
 declare what is stored. The round trip works because what was lost is STORED — the same mechanism as
 the mirror round trip, never because the mapping is magically invertible.
 
-**Example that binds #50 and #52 together (Morten, 2026-07-16) — version storage as base + diff:**
+**Example that binds #50 and #52 together (2026-07-16) — version storage as base + diff:**
 two header files can reflink-point at the same blob (#50), but an edit that rewrites the whole file
 costs 2× disk space — and on ext4/macOS reflink does not exist at all. With bidirectional ETL,
 version 2 is instead stored as base + diff: `forward(v1, edit) → v2` with *the diff as residual*,
@@ -31,7 +31,7 @@ the Bennett-pebbling knob from commitment 6, in production for twenty years. Log
 FS-independent — it works where reflink does not, and the two compose: reflink for identical
 blocks, diff residual for near-identical files.
 
-**And container formats as presentation (Morten, 2026-07-16):** a logical file can *appear* as
+**And container formats as presentation (2026-07-16):** a logical file can *appear* as
 .gz/.zip via mpedbfs (#54) while mpedb stores the content in its own format (delta chains, extents,
 dedup). Two modes with different prices: (a) **presentation** — synthesize a fresh, deterministic
 gz/zip on read (fixed parameters, mtime=0); no residual, but the bytes are not the original's.

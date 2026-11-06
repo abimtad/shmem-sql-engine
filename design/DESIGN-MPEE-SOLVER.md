@@ -53,7 +53,7 @@ implemented, retargeted from the batch to the query graph.
 
 ## 2. Cost input: three honest classes, and no invented constants
 
-Morten's constraint: `row_count` is the simple input, "smart cost analysis is
+The constraint: `row_count` is the simple input, "smart cost analysis is
 the central input but that part can be kept simpler", and — the sharpening that
 shaped the whole model — *"row_count is just a simple approach; e.g. LIKE
 searches etc. will vary based on the type of data, and you cannot always know
@@ -232,7 +232,7 @@ N×N matrix is materialized.
 
 ### 4.1 Extremal sampling and progressive refinement — how far the road analogy carries
 
-Morten's search strategy from the route engine: *"take the far south, then the
+The search strategy from the route engine: *"take the far south, then the
 far north, then the far west and east — the probability is high that the 4×4
 matrix finds main roads/junctions. Add one more between all of them … and then
 you often do not need to calculate the whole N×N."* Sample the extremes, solve the tiny matrix among
@@ -359,7 +359,7 @@ their exact previous hashes for every non-join statement.
 
 ## 7. Refusals — and which of them became constraints (#116)
 
-Morten's framing for v2: *"Left join, where etc. are like constraints in
+The framing for v2: *"Left join, where etc. are like constraints in
 vehicle optimization, and the same applies here, and they then go into the
 N×N cost analyses BEFORE the solver runs."* In vehicle routing a time window, a capacity or a
 forbidden turn is not a reason to abandon the route — it is a constraint the
@@ -533,7 +533,7 @@ Three things about that line, each deliberate:
 
 ## 9. The loop — hooked, not built (#88 / DESIGN-MPEE-COST.md)
 
-Morten: *"PLUS that we can store query history, so that repeated LIKEs can
+The brief: *"PLUS that we can store query history, so that repeated LIKEs can
 keep historical cost and gradually optimize queries"* → *"loop with cost vs
 MPEE iteration for faster queries."*
 
@@ -621,7 +621,7 @@ budget trip. Designed here so the attachment point is fixed.
 
 ### 9.4 Recursive window functions, and mid-execution re-decision
 
-Morten's point stands: for a recursive window function you genuinely cannot know
+The point stands: for a recursive window function you genuinely cannot know
 enough up front, so the plan should be allowed to adjust *during* execution.
 What such a hook may and may not do is fixed by the content-hash contract:
 
@@ -645,7 +645,7 @@ Not built. Written down so that when it is, it does not reach for the plan bytes
 
 ### 9.5 The compile-time ping-pong — BUILT (#116)
 
-Morten: *"by merging N×N/cost and the solver, it can dynamically test and solve
+The brief: *"by merging N×N/cost and the solver, it can dynamically test and solve
 better routes … gives extra value to N×N streaming, because the choice of N can
 then be made with MPEE steering."*
 

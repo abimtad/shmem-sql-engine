@@ -1,7 +1,7 @@
 # DESIGN-HTTP-RANGE — serving a live mpedb over HTTP range requests (layout study)
 
-**Status: exploration (2026-07-18, #22). A *light* think, not a build commitment. Scope refined by
-Morten: the file need not be frozen — it is served live over HTTP and may be mutating; the whole
+**Status: exploration (2026-07-18, #22). A *light* think, not a build commitment. Scope refined:
+the file need not be frozen — it is served live over HTTP and may be mutating; the whole
 question is **data layout**, because each HTTP call is a slow round-trip. Hard constraints: **nothing
 here may cost the local (mmap) hot path, and the on-disk format does not change** — the browser is a
 separate WASM build (feature-flagged) that swaps the `PageStore`; every optimization lives in its
@@ -34,7 +34,7 @@ per-query one.
 
 ## 2. The two-mpedb model — a WASM read build, no format change
 
-Morten's framing sharpens it: this is essentially **two mpedbs sharing one on-disk format**. One is
+The framing sharpens it: this is essentially **two mpedbs sharing one on-disk format**. One is
 the normal disk engine (writes, mmap `PageStore` — unchanged). The other is a **WASM/browser build**
 (a feature flag, e.g. `http-range`) whose *only* difference is a **different `PageStore`
 implementation** — an HTTP-`Range` fetcher with a page cache — under the *same* btree/row/plan/exec
@@ -67,7 +67,7 @@ strategy; none touches the format or the local hot path:
 
 ## 3. MPEE turns round-trip cost into automatic optimization
 
-Morten's key move: **feed the round-trip cost into MPEE's cost model, and the plan optimizes itself.**
+The key move: **feed the round-trip cost into MPEE's cost model, and the plan optimizes itself.**
 MPEE is already the cost-based solver (the N×N cost matrix, exact catalog `row_count`s — #12/#73). Its
 cost function is parameterized by the storage's **per-fetch cost**: ≈0 for local mmap (optimize CPU +
 cardinality, as today), a high latency `L` **per non-contiguous range request** for HTTP. The WASM

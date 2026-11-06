@@ -9,7 +9,7 @@ lock facts, and `crates/mpedb-sqlitefmt` (our native format reader — the
 overflow-chain and spill math below is the code's, differentially tested
 against the real library).
 
-The question (Morten, 2026-07-17): can mpedb operate against **only** a
+The question (2026-07-17): can mpedb operate against **only** a
 regular sqlite `.db` file — one file format, no separate `.mpedb` sidecar?
 The reference alternative it must beat, not merely coexist with, is
 DESIGN-SQLITE-BACKED v0.2: the `.db` as canonical home plus a `.mpedb` delta
@@ -118,7 +118,7 @@ overlay, with LOCKED / OPTIMISTIC / UNLOCKED-OFFLINE modes and a checkpoint.
 
 ## 1. The six approaches
 
-Each is quoted (Morten, 2026-07-17; translated from the Norwegian original), then measured
+Each is quoted (2026-07-17; translated from the Norwegian original), then measured
 against the hard questions: (a) contiguity, (b) relocation, (c) tool
 compatibility, (d) mpedb's invariants, (e) write interleaving vs the
 two-file reference, (f) durability.
