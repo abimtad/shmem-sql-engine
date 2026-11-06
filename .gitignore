@@ -18,3 +18,5 @@ rest.txt
 
 # Arbeidslogg for PG-kompatibilitetsarbeidet (#PG). Ikke commit.
 summary.txt
+config.bat
+node_modules
