@@ -107,10 +107,6 @@ Longer docs:
   build of this repo.
 - Unsupported SQL returns an error. The full list is in [COMPAT.md](COMPAT.md).
 
-## License
-
-Released under the mpedb License 1.0, copyright (c) 2026 Morten
-Punnerud-Engelstad. It is free for every person and organization, except that
 very large companies (over USD 5 billion in revenue or valuation) owe a
 one-time fee of USD 0.07 per device. Every copy must keep the `LICENSE` file
 and the copyright notice. Read [LICENSE](LICENSE) for the exact terms.
