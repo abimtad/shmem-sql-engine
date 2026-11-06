@@ -1,3 +1,7 @@
+import utils.clients
+import utils.http_session
+import utils.transport
+import utils.session
 import os, sys
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 sys.path.insert(0, os.path.dirname(__file__))
