@@ -16,7 +16,7 @@ description = "Drop-in sqlite3 replacement: multi-process embedded database with
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "mpedb License 1.0 (source-available; see LICENSE)" }
-authors = [{ name = "Morten Punnerud-Engelstad" }]
+authors = [{ name = "Kaleb Bogale" }]
 keywords = ["database", "sqlite3", "embedded", "mvcc", "sql"]
 classifiers = [
   "Development Status :: 3 - Alpha",
